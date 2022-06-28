@@ -8,7 +8,7 @@ body {
     font-family: sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6, p, figure {
     margin: 0;
 }
 
@@ -27,6 +27,8 @@ a:hover{
 
 img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 /* 横幅と左右の余白 */
@@ -84,7 +86,7 @@ img {
     text-align: center;
 }
 
-,.hero p {
+.hero p {
     margin-bottom: 72px;
 }
 
@@ -101,3 +103,53 @@ img {
     text-align: center;
     text-shadow: 0 0 6px rgba(0, 0, 0, 0.32);
 } 
+
+/* 画像とテキスト */
+.imgtext {
+    padding: clamp(90px, 9vw, 120px) 0;
+    background-color: white;
+}
+
+.imgtext-container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .imgtext-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .imgtext-container > .text {
+        flex: 1;
+    }
+
+    .imgtext-container > .img {
+        
+    }
+}
+
+/* タイトルとサブタイトル */
+.heading-decoration {
+    font-size: clamp(30px, 3vw, 40px);
+    min-height: 0vw;
+    font-weight: 400;
+}
+
+.heading-decoration::after {
+    display: block;
+    content: '';
+    width: 160px;
+    height: 0;
+    border-top: solid 1px #b72661;
+    margin-top: 0.6em;
+}
+
+.heading-decoration + p {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    color: #707070;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
